@@ -65,10 +65,6 @@
             <font-awesome-icon icon="tasks" />
             <span>Logs</span>
           </b-dropdown-item>
-          <b-dropdown-item v-if="openAPIEnabled" to="/admin/docs" active-class="active">
-            <font-awesome-icon icon="book" />
-            <span>API</span>
-          </b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown
           right

@@ -23,7 +23,6 @@ export default defineComponent({
     const version = `v${APP_VERSION}`;
     const hasAnyAuthorityValues: Ref<any> = ref({});
 
-    const openAPIEnabled = computed(() => store.activeProfiles.indexOf('api-docs') > -1);
     const inProduction = computed(() => store.activeProfiles.indexOf('prod') > -1);
     const authenticated = computed(() => store.authenticated);
 
@@ -55,7 +54,6 @@ export default defineComponent({
       version,
       currentLanguage,
       hasAnyAuthorityValues,
-      openAPIEnabled,
       inProduction,
       authenticated,
     };
