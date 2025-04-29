@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "vueExperiment",
+    "buildTool": "maven",
+    "cacheProvider": "no",
+    "clientFramework": "vue",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1745967315072,
+    "databaseType": "no",
+    "devDatabaseType": null,
+    "enableHibernateCache": null,
+    "enableTranslation": false,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "8.10.0",
+    "jwtSecretKey": "MDk3M2Y0MTVlYmVkNDQzNzEyNGZjOGZhZDNlNDc3OTg0YWRlN2NlNmEwYmIyNmMwZDJhOWE4OThhMDlkZjczYWIyZjU4N2I2MjMzZDQ1NDQxZjkyYmQwOTY5MmJjMzU2NDlkOTJhYjBhODg2Yzk4ZTE3NmMxOWIzMDdiNmY0NWQ=",
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "pt-br",
+    "packageName": "com.paulograbin.vue",
+    "prodDatabaseType": null,
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": true
+  }
+}
