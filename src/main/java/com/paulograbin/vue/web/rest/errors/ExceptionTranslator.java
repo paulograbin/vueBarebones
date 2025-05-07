@@ -20,8 +20,6 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConversionException;
 import org.springframework.lang.Nullable;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.ErrorResponse;
 import org.springframework.web.ErrorResponseException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -200,8 +198,6 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 
     private HttpStatus getMappedStatus(Throwable err) {
         // Where we disagree with Spring defaults
-        if (err instanceof AccessDeniedException) return HttpStatus.FORBIDDEN;
-        if (err instanceof BadCredentialsException) return HttpStatus.UNAUTHORIZED;
         return null;
     }
 
