@@ -1,6 +1,5 @@
 package com.paulograbin.vue;
 
-import com.paulograbin.vue.config.ApplicationProperties;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Optional;
@@ -8,11 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
 
 @SpringBootApplication
-@EnableConfigurationProperties({ ApplicationProperties.class })
 public class VueExperimentApp {
 
     private static final Logger LOG = LoggerFactory.getLogger(VueExperimentApp.class);
