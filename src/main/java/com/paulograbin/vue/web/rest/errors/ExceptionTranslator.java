@@ -9,7 +9,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -132,13 +131,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
             .getBindingResult()
             .getFieldErrors()
             .stream()
-            .map(f ->
-                new FieldErrorVM(
-                    f.getObjectName().replaceFirst("DTO$", ""),
-                    f.getField(),
-                    StringUtils.isNotBlank(f.getDefaultMessage()) ? f.getDefaultMessage() : f.getCode()
-                )
-            )
+            .map(f -> new FieldErrorVM(f.getObjectName().replaceFirst("DTO$", ""), f.getField(), ""))
             .toList();
     }
 
@@ -149,7 +142,7 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 
     private String extractURI(NativeWebRequest request) {
         HttpServletRequest nativeRequest = request.getNativeRequest(HttpServletRequest.class);
-        return nativeRequest != null ? nativeRequest.getRequestURI() : StringUtils.EMPTY;
+        return nativeRequest != null ? nativeRequest.getRequestURI() : "";
     }
 
     private HttpStatus toStatus(final Throwable throwable) {
@@ -232,6 +225,6 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 
     private boolean containsPackageName(String message) {
         // This list is for sure not complete
-        return StringUtils.containsAny(message, "org.", "java.", "net.", "jakarta.", "javax.", "com.", "io.", "de.", "com.paulograbin.vue");
+        return false;
     }
 }
