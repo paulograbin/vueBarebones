@@ -1,9 +1,9 @@
 package com.paulograbin.vue;
 
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,11 +23,14 @@ public class VueExperimentApp {
             config.vue.vueInstanceNameInJs = "app";
         });
 
-        app.before(ctx -> LOG.info("Before ctx: {}", ctx.path()));
+        app.before(BeforeRequestFilter::handleBeforeRequest);
+
         app.get("/management/info", Controller::getInfo);
         app.get("/api/account", Controller::getAccount);
 
         app.start(7070);
+
+        Runtime.getRuntime().addShutdownHook(new Thread(app::stop));
 
         logApplicationStartup();
     }
